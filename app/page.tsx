@@ -1,10 +1,11 @@
 import { NavBar } from "@/components";
-import Image from "next/image";
+import { Main } from "@/components";
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
       <NavBar />
+      <Main />
     </main>
   );
 }
