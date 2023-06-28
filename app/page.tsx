@@ -1,4 +1,4 @@
-import { NavBar } from "@/components";
+import { About, NavBar, Skill } from "@/components";
 import { Main } from "@/components";
 
 export default function Home() {
@@ -6,6 +6,8 @@ export default function Home() {
     <main className="overflow-hidden">
       <NavBar />
       <Main />
+      <About />
+      <Skill />
     </main>
   );
 }
