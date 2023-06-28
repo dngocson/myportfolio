@@ -1,4 +1,4 @@
-import { About, NavBar, Skill } from "@/components";
+import { About, Contact, NavBar, Project, Skill } from "@/components";
 import { Main } from "@/components";
 
 export default function Home() {
@@ -8,6 +8,8 @@ export default function Home() {
       <Main />
       <About />
       <Skill />
+      <Project />
+      <Contact />
     </main>
   );
 }
