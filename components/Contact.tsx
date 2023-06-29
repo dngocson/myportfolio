@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import connectImage from "../public/stayintouch.jpg";
 import Image from "next/image";
 import { AiOutlineMail } from "react-icons/ai";
@@ -6,7 +9,35 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
+import toast, { Toaster } from "react-hot-toast";
+
 const Contact = () => {
+  const [sending, setSending] = useState(false);
+
+  const form = useRef(null);
+  const sendEmail = (e: any) => {
+    setSending(true);
+    e.preventDefault();
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_2y0ycla",
+          "template_hgliq6a",
+          form.current,
+          "GBPqhJhBBDQx5j2Z1"
+        )
+        .then(
+          (result) => {
+            setSending(false);
+            toast.success("Message Sended");
+          },
+          (error) => {
+            setSending(false);
+            toast.error(error.message);
+          }
+        );
+    }
+  };
   return (
     <div id="contact" className="w-full lg:h-screen">
       <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -32,31 +63,57 @@ const Contact = () => {
               <div>
                 <p className="uppercase pt-8">Connect with me</p>
                 <div className="flex items-center justify-between py-4">
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <FaGithub />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <AiOutlineMail />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <BsFillPersonLinesFill />
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                    <FaLinkedinIn />
-                  </div>
+                  <a
+                    href="https://github.com/dngocson"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                      <FaGithub />
+                    </div>
+                  </a>
+                  <a
+                    href="mailto:dngocson12@gmail.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                      <AiOutlineMail />
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/ngocson.do.528/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                      <BsFillPersonLinesFill />
+                    </div>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/ng%E1%BB%8Dc-s%C6%A1n-%C4%91%E1%BB%97-4a2457247/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
+                      <FaLinkedinIn />
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4">
             <div className="p-4">
-              <form>
+              <form ref={form} onSubmit={sendEmail}>
                 <div className="grid md:grid-cols-2 gap-4 w-full py-2">
                   <div className="flex flex-col">
                     <label className="uppercase text-sm py-2">Name</label>
                     <input
+                      required
                       type="text"
                       className="border-2 rounded-lg p-3 flex border-gray-300"
+                      name="user_name"
                     />
                   </div>
                   <div className="flex flex-col">
@@ -66,6 +123,8 @@ const Contact = () => {
                     <input
                       type="text"
                       className="border-2 rounded-lg p-3 flex border-gray-300"
+                      name="user_number"
+                      required
                     />
                   </div>
                 </div>
@@ -74,6 +133,8 @@ const Contact = () => {
                   <input
                     type="email"
                     className="border-2 rounded-lg p-3 flex border-gray-300"
+                    name="user_email"
+                    required
                   />
                 </div>
                 <div className="flex flex-col py-2">
@@ -81,6 +142,8 @@ const Contact = () => {
                   <input
                     type="text"
                     className="border-2 rounded-lg p-3 flex border-gray-300"
+                    name="user_subject"
+                    required
                   />
                 </div>
                 <div className="flex flex-col py-2">
@@ -88,10 +151,15 @@ const Contact = () => {
                   <textarea
                     className="border-2 rounded-lg p-3 border-gray-300"
                     rows={10}
+                    name="message"
+                    required
                   />
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
-                  Send Message
+                <button
+                  disabled={sending}
+                  className="w-full p-4 text-gray-100 mt-4 disabled:opacity-50"
+                >
+                  {!sending ? `Send Message` : "Sending Message"}
                 </button>
               </form>
             </div>
@@ -105,6 +173,22 @@ const Contact = () => {
           </div>
         </Link>
       </div>
+      <Toaster
+        position="top-right"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastOptions={{
+          success: { duration: 3000 },
+          error: { duration: 5000 },
+          style: {
+            fontSize: "16px",
+            maxWidth: "500px",
+            padding: "16px 24px",
+            backgroundColor: "#cbd5e1",
+            color: "#1f2937",
+          },
+        }}
+      />
     </div>
   );
 };

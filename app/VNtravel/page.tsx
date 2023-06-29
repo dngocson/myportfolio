@@ -33,7 +33,7 @@ const Page = () => {
             JavaScript, and features a responsive design that looks great on any
             device. It also have a carousel and picture cards to display all
             stunning destinations, you also can use our map with geolocation API
-            and Leaflet library integration to find the closest office. is
+            and Leaflet library integration to find the closest office. It is
             hosted on Firebase for optimal performance.
           </p>
           <a

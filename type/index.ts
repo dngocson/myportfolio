@@ -6,3 +6,8 @@ export interface ProjectDetail {
   backgroundImg: string | StaticImageData;
   projectUrl: string;
 }
+export interface emailValue {
+  email: string;
+  subject: string;
+  message: string;
+}
