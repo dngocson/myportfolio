@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 
 const About = () => {
   return (
@@ -23,7 +26,7 @@ const About = () => {
             am constantly learning and expanding my skills, driven by my desire
             to create innovative and impactful solutions.
           </p>
-          <p>
+          <p className="py-2 text-gray-600">
             I am excited to embark on this new journey and am confident that my
             experience as a system engineer, combined with my determination and
             passion for web development, will enable me to succeed in this new

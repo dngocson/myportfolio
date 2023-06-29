@@ -5,9 +5,23 @@ import Link from "next/link";
 import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+// import { usePathname } from "next/navigation";
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
+  const [navBg, setNavBg] = useState("#ecf0f3");
+  const [linkColor, setLinkColor] = useState("#1f2937");
+  // const pathname = usePathname();
+
+  // useEffect(() => {
+  //   if (pathname === "/property") {
+  //     setNavBg("transparent");
+  //     setLinkColor("#ecf0f3");
+  //   } else {
+  //     setNavBg("#ecf0f3");
+  //     setLinkColor("#1f2937");
+  //   }
+  // }, [pathname]);
   const activeNav = () => {
     setNav((prev) => !prev);
   };
@@ -24,6 +38,7 @@ const NavBar = () => {
   }, []);
   return (
     <div
+      style={{ backgroundColor: `${navBg}` }}
       className={
         shadow
           ? "fixed w-full h-20 shadow-xl z-[100]"
@@ -31,20 +46,22 @@ const NavBar = () => {
       }
     >
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-        <Image
-          priority
-          src="/logo.png"
-          width={50}
-          height={50}
-          alt="logo"
-          className="object-contain"
-        />
+        <Link href={"/#home"}>
+          <Image
+            priority
+            src="/logo.png"
+            width={50}
+            height={50}
+            alt="logo"
+            className="object-contain"
+          />
+        </Link>
         <div>
-          <ul className="hidden md:flex">
-            <Link href={"/"}>
+          <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
+            <Link href={"/#home"}>
               <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
             </Link>
-            <Link href="#about" scroll={false}>
+            <Link href="/#about" scroll={false}>
               <li className="ml-10 text-sm uppercase hover:border-b">About</li>
             </Link>
             <Link href={"/#skills"}>
@@ -95,20 +112,30 @@ const NavBar = () => {
             </div>
             <div className="py-4 flex flex-col ">
               <ul className="uppercase">
-                <Link href={"/"}>
-                  <li className="py-4 text-sm">Home</li>
+                <Link href={"/#home"}>
+                  <li onClick={() => setNav(false)} className="py-4 text-sm">
+                    Home
+                  </li>
                 </Link>
-                <Link href={"/"}>
-                  <li className="py-4 text-sm">About</li>
+                <Link href={"/#about"}>
+                  <li onClick={() => setNav(false)} className="py-4 text-sm">
+                    About
+                  </li>
                 </Link>
-                <Link href={"/"}>
-                  <li className="py-4 text-sm">Skills</li>
+                <Link href={"/#skills"}>
+                  <li onClick={() => setNav(false)} className="py-4 text-sm">
+                    Skills
+                  </li>
                 </Link>
-                <Link href={"/"}>
-                  <li className="py-4 text-sm">Projects</li>
+                <Link href={"/#project"}>
+                  <li onClick={() => setNav(false)} className="py-4 text-sm">
+                    Projects
+                  </li>
                 </Link>
-                <Link href={"/"}>
-                  <li className="py-4 text-sm">Contact</li>
+                <Link href={"/#contact"}>
+                  <li onClick={() => setNav(false)} className="py-4 text-sm">
+                    Contact
+                  </li>
                 </Link>
               </ul>
               <div className="pt-40">

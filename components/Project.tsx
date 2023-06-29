@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import project1img from "../public/project1.png";
 import project2img from "../public/project2.png";
@@ -18,31 +17,31 @@ const Project = () => {
           <ProjectItem
             title="My shop"
             backgroundImg={project1img}
-            projectUrl="/"
+            projectUrl="/myshop"
             subTitle="ReactJs + TailwindCss + Firebase"
           />
           <ProjectItem
             title="VietNam Travel"
             backgroundImg={project2img}
-            projectUrl="/"
-            subTitle="HTML + Css + JavaScript "
+            projectUrl="/VNtravel"
+            subTitle="Html + Css + JavaScript "
           />
           <ProjectItem
             title="My portfolio page"
             backgroundImg={project3img}
-            projectUrl="/"
+            projectUrl="/portfolio"
             subTitle="NextJs + TailwindCss + Typescript"
           />
           <ProjectItem
             title="Lucy PetCare"
             backgroundImg={project4img}
-            projectUrl="/"
+            projectUrl="/lucyPetcare"
             subTitle="ReactJs + Css"
           />
           <ProjectItem
             title="Carhub"
             backgroundImg={project5img}
-            projectUrl="/"
+            projectUrl="/carhub"
             subTitle="NextJs + TailwindCss + Typescript"
           />
         </div>
