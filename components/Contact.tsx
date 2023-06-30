@@ -29,7 +29,7 @@ const Contact = () => {
         .then(
           (result) => {
             setSending(false);
-            toast.success("Message Sended");
+            toast.success("message sent successfully");
           },
           (error) => {
             setSending(false);
