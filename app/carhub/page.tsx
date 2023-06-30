@@ -28,10 +28,12 @@ const Page = () => {
           <h3>Project</h3>
           <h2>Overview</h2>
           <p className="py-2 text-gray-800">
-            CarHub is one of my study/clone projects. It showcases a list of car
-            brands and their products, built with NextJs using TypeScript and
-            Tailwind CSS. It features a responsive design that works on multiple
-            screen sizes and is hosted on Vercel for optimal performance.
+            CarHub is one of my study/clone projects. a project that showcases a
+            list of car brands and their products. Built with NextJs using
+            TypeScript and Tailwind CSS, CarHub allows users to search for their
+            favorite car brands and pick the model they want. Featuring a
+            responsive design that works on multiple screen sizes, it is hosted
+            on Vercel for optimal performance.
           </p>
           <a
             href="https://carshowcase-five.vercel.app/"

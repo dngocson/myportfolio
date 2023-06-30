@@ -28,7 +28,12 @@ const Page = () => {
           <h3>Project</h3>
           <h2>Overview</h2>
           <p className="py-2 text-gray-800">
-            This is my portfolio page, built with Next.js and Tailwind CSS.
+            This is my portfolio page, built with NextJs, TypeScript, and
+            Tailwind CSS. Featuring a responsive design that works on multiple
+            screen sizes, my portfolio includes an implementation of the
+            NodeEmail library for sending emails without logging in. Hosted on
+            Vercel for better optimization, my portfolio showcases my skills and
+            abilities.
           </p>
 
           <a
