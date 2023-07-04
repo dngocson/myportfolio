@@ -4,6 +4,7 @@ import project2img from "../public/project2.png";
 import project3img from "../public/project3.png";
 import project4img from "../public/project4.png";
 import project5img from "../public/project5.png";
+import pizzaCo from "../public/PizzaCo.png";
 import ProjectItem from "./ProjectItem";
 const Project = () => {
   return (
@@ -20,18 +21,28 @@ const Project = () => {
             projectUrl="/myshop"
             subTitle="ReactJs + TailwindCss + Firebase"
           />
+
           <ProjectItem
-            title="VietNam Travel"
-            backgroundImg={project2img}
-            projectUrl="/VNtravel"
-            subTitle="Html + Css + JavaScript "
+            title="Carhub"
+            backgroundImg={project5img}
+            projectUrl="/carhub"
+            subTitle="NextJs + TailwindCss + Typescript"
           />
+
           <ProjectItem
             title="My portfolio page"
             backgroundImg={project3img}
             projectUrl="/portfolio"
             subTitle="NextJs + TailwindCss + Typescript"
           />
+
+          <ProjectItem
+            title="The Pizza C.o"
+            backgroundImg={pizzaCo}
+            projectUrl="/pizzaCo"
+            subTitle="Reactjs + TailwindCss + Typescript"
+          />
+
           <ProjectItem
             title="Lucy PetCare"
             backgroundImg={project4img}
@@ -39,10 +50,10 @@ const Project = () => {
             subTitle="ReactJs + Css"
           />
           <ProjectItem
-            title="Carhub"
-            backgroundImg={project5img}
-            projectUrl="/carhub"
-            subTitle="NextJs + TailwindCss + Typescript"
+            title="VietNam Travel"
+            backgroundImg={project2img}
+            projectUrl="/VNtravel"
+            subTitle="Html + Css + JavaScript "
           />
         </div>
       </div>
