@@ -12,7 +12,7 @@ const NavBar = () => {
   const [navBg, setNavBg] = useState("#ecf0f3");
   const [linkColor, setLinkColor] = useState("#1f2937");
   // const pathname = usePathname();
-
+  // use to change navBar transparents
   // useEffect(() => {
   //   if (pathname === "/property") {
   //     setNavBg("transparent");
