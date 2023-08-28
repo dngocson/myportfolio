@@ -17,7 +17,7 @@ const Page = () => {
           <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
             <div className="bg-[#ecf0f3]/90 inline-block p-4 rounded-xl text-center text-[#1f2937]">
               <h2 className="py-2">My shop</h2>
-              <h3>ReactJs + Tailwind + Firebase</h3>
+              <h3>ReactJs + Tailwind + Supabase</h3>
             </div>
           </div>
         </div>
