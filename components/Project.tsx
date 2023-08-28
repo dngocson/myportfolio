@@ -6,6 +6,7 @@ import project4img from "../public/project4.png";
 import project5img from "../public/project5.png";
 import pizzaCo from "../public/PizzaCo.png";
 import ProjectItem from "./ProjectItem";
+import trasuatoponepic from "../public/TraSuaTopONe.webp";
 const Project = () => {
   return (
     <div id="project" className="w-full">
@@ -15,6 +16,13 @@ const Project = () => {
         </p>
         <h2 className="py-4">What I've Build</h2>
         <div className="grid md:grid-cols-2 gap-8">
+          <ProjectItem
+            title="Trà sữa Top One"
+            backgroundImg={trasuatoponepic}
+            projectUrl="/trasuatopone"
+            subTitle="ReactJs + TailwindCss + Supabase"
+          />
+
           <ProjectItem
             title="My shop"
             backgroundImg={project1img}
