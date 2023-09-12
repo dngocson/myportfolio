@@ -32,6 +32,7 @@ const About = () => {
           </p>
           <Link
             href={"/do_ngoc_son_CV.pdf"}
+            type="download"
             className="flex w-max gap-1 items-center rounded-lg border-2 text-white border-solid bg-[#1f2937] p-2.5 px-6 text-lg font-semibold capitalize hover:bg-transparent hover:text-[#1f2937] hover:border-[#1f2937]"
           >
             my resume <AiFillFolderOpen />
